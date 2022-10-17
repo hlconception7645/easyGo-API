@@ -4,8 +4,8 @@ dotenv.config();
 import express, { Request, Response, Application } from "express";
 import cors from "cors";
 import { connectMongoose } from "./models/db";
-import swaggerUi from "swagger-ui-express";
-import swaggerDocument from "../swagger.json";
+//import swaggerUi from "swagger-ui-express";
+//import swaggerDocument from "../swagger.json";
 import { errorMiddleWare } from "./middlewares/error.middleware";
 import { adminRequired, auth } from "./middlewares/auth.middleware";
 import { V1AdminRoutes } from "./routes/v1/admin";
@@ -37,13 +37,13 @@ async function main() {
     );
 
     // API DOCS
-    app.use(
+    /*app.use(
       "/api-docs",
       swaggerUi.serve,
       swaggerUi.setup(swaggerDocument, {
         explorer: true,
       })
-    );
+    );*/
 
     // Api Routes.
     app.get("/", async (req: Request, res: Response) => {
